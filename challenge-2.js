@@ -1,7 +1,15 @@
 // Desafio 2: Palindrome
 
 function isPalindrome(word) {
-  // Write your code here
+	const cleanWord = word.replace(/[^\wèéòàùì]/g, '').toLowerCase();
+	let compareWord = '';
+
+	// could be done with split().reverse().join(), but i think for is more fun now
+	for (let i = cleanWord.length - 1; i >=0; i--) {
+		compareWord += cleanWord[i]
+	}
+
+	return compareWord === cleanWord
 }
 
 console.log(isPalindrome("civic")); // true
